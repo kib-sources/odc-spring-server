@@ -1,0 +1,28 @@
+server:
+  port: ${SERVER_PROCESSING_PORT:8091}
+
+spring:
+#  liquibase:
+#    enabled: true
+#    change-log: db/changelog/db.changelog-master.xml
+#    default-schema: ${TM_DEFAULT_SCHEMA:public}
+#  jackson:
+#    default-property-inclusion: non_null
+  datasource:
+    password: ${DATABASE_PASSWORD:postgres}
+    # !!! Need for Spring JDBC. Is used for procedures executing.
+    # In escapeSyntaxCallMode=callIfNoReturn mode, the driver uses a CALL statement (allowing procedure invocation)
+    # if there is no return parameter specified, otherwise the driver uses a SELECT statement
+#    url: ${DATABASE_CONNECTION_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=public&escapeSyntaxCallMode=callIfNoReturn}
+    url: ${DATABASE_CONNECTION_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=processing-kib01&escapeSyntaxCallMode=callIfNoReturn}
+    username: ${DATABASE_USER:postgres}
+    pool-size: ${DATABASE_POOL_SIZE:10}
+
+logging:
+  level:
+    root: ${LOGGER_LEVEL:info}
+    org.hibernate.orm.jdbc.bind: ${SHOW_SQL_BINDIG_PARAMETR_LEVEL:info}
+#    org.springframework.web.filter.CommonsRequestLoggingFilter: ${REQUEST_LOGGING_FILTER:debug}
+
+#kib:
+
