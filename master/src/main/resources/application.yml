@@ -14,7 +14,7 @@ spring:
     # In escapeSyntaxCallMode=callIfNoReturn mode, the driver uses a CALL statement (allowing procedure invocation)
     # if there is no return parameter specified, otherwise the driver uses a SELECT statement
 #    url: ${DATABASE_CONNECTION_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=public&escapeSyntaxCallMode=callIfNoReturn}
-    url: ${DATABASE_CONNECTION_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=master-kib01&escapeSyntaxCallMode=callIfNoReturn}
+    url: ${DATABASE_CONNECTION_URL:jdbc:postgresql://localhost:5432/master-kib01?currentSchema=master-kib01&escapeSyntaxCallMode=callIfNoReturn}
     username: ${DATABASE_USER:postgres}
     pool-size: ${DATABASE_POOL_SIZE:10}
 
@@ -24,5 +24,9 @@ logging:
     org.hibernate.orm.jdbc.bind: ${SHOW_SQL_BINDIG_PARAMETR_LEVEL:info}
 #    org.springframework.web.filter.CommonsRequestLoggingFilter: ${REQUEST_LOGGING_FILTER:debug}
 
-kib:
+master:
+  name: ${NAME:master-kib01}
+  db-name: ${DB_NAME:master-kib01}
+  save-private-keys-in-db: ${SAVE_PRIVATE_KEYS_IN_DB:true}
+
 

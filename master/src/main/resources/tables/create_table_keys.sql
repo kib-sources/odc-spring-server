@@ -1,0 +1,13 @@
+CREATE TABLE KEYS
+(
+    SERVICE_NAME VARCHAR(20)              NOT NULL,
+    KEY_NAME     VARCHAR(20)              NOT NULL,
+    IS_PUBLIC    BOOL                     NOT NULL,
+    ALG          VARCHAR(40)              NOT NULL,
+    BODY_BASE64  TEXT                     NOT NULL
+--     CREATE_TIME  TIMESTAMP WITH TIME ZONE NOT NULL
+)
+--     PARTITION BY RANGE (CREATE_TIME)
+;
+-- CREATE INDEX IX_KEYS ON KEYS (SERVICE_NAME, KEY_NAME)
+-- ;
