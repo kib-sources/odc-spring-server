@@ -1,5 +1,11 @@
 # Production server
 
+# DB settings
+Перед запуском нужно создать схему в БД: 
+```text
+production-kib01
+```
+
 ## Основная задача
 
 Задачи:

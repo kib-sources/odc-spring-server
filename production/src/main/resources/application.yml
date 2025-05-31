@@ -2,10 +2,10 @@ server:
   port: ${SERVER_PROCESSING_PORT:8092}
 
 spring:
-#  liquibase:
-#    enabled: true
-#    change-log: db/changelog/db.changelog-master.xml
-#    default-schema: ${TM_DEFAULT_SCHEMA:public}
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-master.xml
+    default-schema: ${TM_DEFAULT_SCHEMA:public}
 #  jackson:
 #    default-property-inclusion: non_null
   datasource:
@@ -14,7 +14,7 @@ spring:
     # In escapeSyntaxCallMode=callIfNoReturn mode, the driver uses a CALL statement (allowing procedure invocation)
     # if there is no return parameter specified, otherwise the driver uses a SELECT statement
 #    url: ${DATABASE_CONNECTION_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=public&escapeSyntaxCallMode=callIfNoReturn}
-    url: ${DATABASE_CONNECTION_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=production-kib01&escapeSyntaxCallMode=callIfNoReturn}
+    url: ${DATABASE_CONNECTION_URL:jdbc:postgresql://localhost:5432/production-kib01?currentSchema=public&escapeSyntaxCallMode=callIfNoReturn}
     username: ${DATABASE_USER:postgres}
     pool-size: ${DATABASE_POOL_SIZE:10}
 

@@ -1,0 +1,16 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="create-table-banknotes-headers" author="production-server">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="BANKNOTES_HEADERS"/>
+            </not>
+        </preConditions>
+        <sqlFile path="db/changelog/v1000/sql/tables/banknote_headers.sql" />
+    </changeSet>
+
+</databaseChangeLog>

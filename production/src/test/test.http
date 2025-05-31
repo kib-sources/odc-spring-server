@@ -1,0 +1,4 @@
+### POST request to example server
+
+POST localhost:8092/admin/test
+###
